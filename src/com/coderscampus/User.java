@@ -40,13 +40,7 @@ public abstract class User implements UserInterface {
 		return role;
 	}
 	
-	public void showOptions() {
-		System.out.println("Please choose from the following options:");
-		System.out.println("(1) Update username");
-		System.out.println("(2) Update password");
-		System.out.println("(3) Update name");
-		System.out.println("(4) Exit");
-	}
+	public abstract void showOptions();
 	
 	public void updateName(String newName, File file) throws IOException {
 		String oldS = getUsername() + ", " + getPassword() + ", ";
