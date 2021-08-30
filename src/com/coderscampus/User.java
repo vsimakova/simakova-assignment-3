@@ -2,7 +2,7 @@ package com.coderscampus;
 import java.io.File;
 import java.io.IOException;
 
-public abstract class User implements UserInterface {
+public abstract class User implements UserInterface, Comparable<User>  {
 	//instance variables
 	private String username;
 	private String password;
@@ -73,5 +73,9 @@ public abstract class User implements UserInterface {
 		FileService.writeToFile(file, oldS, newS);
 		System.out.println("Username is successfully updated.");
 		System.out.println("----------");
+	}
+	
+	public int compareTo(User user) {
+		return this.name.compareTo(user.name);
 	}
 }

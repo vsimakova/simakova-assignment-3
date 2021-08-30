@@ -92,8 +92,8 @@ public class FileService {
 				
 				currentLine = reader.readLine();
 			}
-			Collections.sort(superUsers);
-			Collections.sort(normalUsers);
+			Collections.sort(superUsers, String.CASE_INSENSITIVE_ORDER);
+			Collections.sort(normalUsers, String.CASE_INSENSITIVE_ORDER);
 			
 			writer = new BufferedWriter(new FileWriter(file));
 			for (String line : superUsers) {
